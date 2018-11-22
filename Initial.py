@@ -37,7 +37,7 @@ async def on_message(message):
 
     elif message.content.startswith('d!choose '):
         a = message.content
-        await Choose.choose(a,garith)
+        await Choose.choose(a,garith,message)
         
 
 garith.run(os.getenv('TOKEN'))
