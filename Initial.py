@@ -2,6 +2,7 @@ import discord
 import asyncio
 import os
 import random
+from Choose import Choose
 
 
 garith = discord.Client()
@@ -36,10 +37,8 @@ async def on_message(message):
 
     elif message.content.startswith('d!choose '):
         a = message.content
-        b,c,d=a.split(" ")
-        choices = [c,d]
-        e = random.choice(choices)
-        await garith.send_message(message.channel,'I choose *%s* ' % e)
+        Choose.choose(a)
+        
 
 garith.run(os.getenv('TOKEN'))
         
