@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import os
 
 garith = discord.Client()
 
