@@ -1,7 +1,7 @@
 import random
 import discord
 
-async def choose(a,garith):
+async def choose(a,garith,message):
     b,c,d=a.split(" ")
     l = [c,d]
     e = random.choice(l)
