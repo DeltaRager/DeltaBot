@@ -2,7 +2,7 @@ import discord
 import asyncio
 import os
 import random
-from Choose.py import Choose
+from Choose import Choose.py
 
 
 garith = discord.Client()
