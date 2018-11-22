@@ -44,7 +44,7 @@ async def on_message(message):
         await Choose.choose(a,garith,message)
 
 @Garith.command()
-async def try(ctx):
+async def hi(ctx):
     await ctx.send('123 check, works fine')
 
         
