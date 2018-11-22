@@ -51,6 +51,11 @@ async def on_message(message):
     elif message.content.startswith('g!join'):
         channel = message.author.voice.voice_channel
         await garith.join_voice_channel(channel)
+
+    elif message.content.startswith('g!leave'):
+        server = message.server
+        voice_client = garith.voice_client_in(server)
+        await voice_client.disconnect()
         
 
 garith.run(os.getenv('TOKEN'))
