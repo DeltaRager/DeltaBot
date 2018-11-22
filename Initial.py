@@ -33,6 +33,9 @@ async def on_message(message):
     elif message.content.startswith('d!night '):
         await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
 
+    elif message.content.startswith('d!choose '):
+        Choose.py.choose()
+
 garith.run(os.getenv('TOKEN'))
         
 
