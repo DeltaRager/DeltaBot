@@ -1,14 +1,8 @@
 import random
 import discord
 
-async def choose(garith,message):
-    print("Enter the size of the list:")
-    N = input()
-    for x in range(N):
-            x = input("")
-            try:  
-                the_list.append(int(x))
-            except ValueError:
-                the_list.append(x)
+async def choose(a,garith,message):
+    x = a.split(",")
+    del x[0]
     e = random.choice(x)
     await garith.send_message(message.channel,'I choose %s ' % e)
