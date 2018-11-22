@@ -42,7 +42,7 @@ async def night(*args):
     await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
 
 @garith.command()
-async def choose()
+async def choose():
     a = message.content
     await Choose.choose(a,garith,message)
 
