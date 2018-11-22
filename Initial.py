@@ -7,7 +7,7 @@ import Help
 from discord.ext import commands
 from discord.ext.commands import Bot
 
-garith = commands.Bot(command_prefix = 'g!')
+garith = discord.Client()
 
 
 
@@ -22,33 +22,31 @@ async def on_ready():
 
 
 
-@garith.command()
-async def test(message):
-    counter=0
-    tmp = await garith.send_message(message.channel, 'Calculating messages..')
-    async for log in garith.logs_from(message.channel,limit=100):
-        if log.author == message.author:
-            counter +=1
-    await garith.edit_message(tmp, 'You have {} messages.'.format(counter))
-    
-@garith.command()
-async def sleep(message):
-    userID = message.author.id
-    await asyncio.sleep(5)
-    await garith.send_message(message.channel, '<@%s> Die please!' % (userID))
+@garith.event
+async def on_message(message):
+    if message.content.startswith('g!test'):
+        counter=0
+        tmp = await garith.send_message(message.channel, 'Calculating messages..')
+        async for log in garith.logs_from(message.channel,limit=100):
+            if log.author == message.author:
+                counter +=1
 
-@garith.command()
-async def night(message):
-    await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
 
-@garith.command()
-async def choose(message):
-    a = message.content
-    await Choose.choose(a,garith,message)
+        await garith.edit_message(tmp, 'You have {} messages.'.format(counter))
+    elif message.content.startswith('g!sleep'):
+        userID = message.author.id
+        await asyncio.sleep(5)
+        await garith.send_message(message.channel, '<@%s> Die please!' % (userID))
 
-@garith.command()
-async def help(message):
-    await Help.help(garith,message)
+    elif message.content.startswith('g!night '):
+        await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
+
+    elif message.content.startswith('g!choose '):
+        a = message.content
+        await Choose.choose(a,garith,message)
+
+    elif message.content.startswith('g!help'):
+        await Help.help(garith,message)
         
 
 garith.run(os.getenv('TOKEN'))
