@@ -9,7 +9,7 @@ from discord.ext.commands import Bot
 
 garith = discord.Client()
 
-Garith = commands.bot( command_prefix=('g!','G!'))
+Garith = commands.Bot( command_prefix=('g!','G!'))
 
 @garith.event
 async def on_ready():
