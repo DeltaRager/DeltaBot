@@ -18,7 +18,7 @@ async def on_ready():
 
 @garith.event
 async def on_message(message):
-    if message.content.startswith('d!test'):
+    if message.content.startswith('g!test'):
         counter=0
         tmp = await garith.send_message(message.channel, 'Calculating messages..')
         async for log in garith.logs_from(message.channel,limit=100):
@@ -27,15 +27,15 @@ async def on_message(message):
 
 
         await garith.edit_message(tmp, 'You have {} messages.'.format(counter))
-    elif message.content.startswith('d!sleep'):
+    elif message.content.startswith('g!sleep'):
         userID = message.author.id
         await asyncio.sleep(5)
         await garith.send_message(message.channel, '<@%s> Die please!' % (userID))
 
-    elif message.content.startswith('d!night '):
+    elif message.content.startswith('g!night '):
         await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
 
-    elif message.content.startswith('d!choose '):
+    elif message.content.startswith('g!choose '):
         await Choose.choose(garith,message)
         
 
