@@ -8,7 +8,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 
 garith = discord.Client()
-tod = commands.Bot(commands_prefix='g!')
+tod = commands.Bot(command_prefix = 'g!')
 
 
 
