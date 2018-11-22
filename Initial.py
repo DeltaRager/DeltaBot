@@ -3,9 +3,13 @@ import asyncio
 import os
 import random
 import Choose
+from discord.ext import commands
+from discord.ext.commands import Bot
 
 
 garith = discord.Client()
+
+Garith = commands.bot( command_prefix=('g!','G!'))
 
 @garith.event
 async def on_ready():
@@ -38,6 +42,11 @@ async def on_message(message):
     elif message.content.startswith('g!choose '):
         a = message.content
         await Choose.choose(a,garith,message)
+
+@Garith.command()
+async def test(ctx):
+    await ctx.send('123 check, works fine')
+
         
 
 garith.run(os.getenv('TOKEN'))
