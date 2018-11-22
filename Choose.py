@@ -1,8 +1,13 @@
 import random
 import discord
 
-async def choose(a,garith,message):
-    b,c,d,e,f,g,h,i,j=a.split(" ")
-    l = [c,d,e,f,g,h,i,j]
-    e = random.choice(l)
+async def choose(garith,message):
+    n = int(input("Enter the number of choices: ")
+    for x in range(n):
+            x = input("")
+            try:  
+                the_list.append(int(x))
+            except ValueError:
+                the_list.append(x)
+    e = random.choice(x)
     await garith.send_message(message.channel,'I choose %s ' % e)
