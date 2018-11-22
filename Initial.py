@@ -3,6 +3,7 @@ import asyncio
 import os
 import random
 import Choose
+import Help
 from discord.ext import commands
 from discord.ext.commands import Bot
 
@@ -43,7 +44,8 @@ async def on_message(message):
         a = message.content
         await Choose.choose(a,garith,message)
 
-
+    elif message.content.startswith('g!help'):
+        await Help.help(garith,message)
         
 
 garith.run(os.getenv('TOKEN'))
