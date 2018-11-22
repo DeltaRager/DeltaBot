@@ -1,10 +1,9 @@
 import discord
 import asyncio
+from Initial.py import garith
 
-@garith.event
-async def on_message(message):
-    if message.content.startswith('d!choose'):
-        a = message.content
-        b,c,d = a.split(" ")
-        print(a,b,c,d)
-        
+def choose():
+    a = message.content
+    b,c,d=a.split(" ")
+    print(a,b,c,d)
+
