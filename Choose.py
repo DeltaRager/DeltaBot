@@ -2,8 +2,9 @@ import random
 import discord
 
 async def choose(garith,message):
-    n = int(input("Enter the number of choices: ")
-    for x in range(n):
+    print("Enter the size of the list:")
+    N = int(input())
+    for x in range(N):
             x = input("")
             try:  
                 the_list.append(int(x))
