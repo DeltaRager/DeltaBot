@@ -1,7 +1,7 @@
 import discord
 import asyncio
 import os
-from Choose.py import *
+import Choose
 
 garith = discord.Client()
 
@@ -34,7 +34,7 @@ async def on_message(message):
         await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
 
     elif message.content.startswith('d!choose '):
-        Choose.py.choose()
+        Choose.choose()
 
 garith.run(os.getenv('TOKEN'))
         
