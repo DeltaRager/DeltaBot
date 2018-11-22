@@ -49,6 +49,7 @@ async def on_message(message):
         await Help.help(garith,message)
 
     elif message.content.startswith('g!join'):
+        channel = message.author.voice.voice_channel
         await garith.join_voice_channel(channel)
         
 
