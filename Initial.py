@@ -39,7 +39,7 @@ async def on_message(message):
         b,c,d=a.split(" ")
         choices = [c,d]
         e = random.choice(choices)
-        await garith.send_message(message.channel,'I choose %s ' % e)
+        await garith.send_message(message.channel,'I choose ** %s ** ' % e)
 
 garith.run(os.getenv('TOKEN'))
         
