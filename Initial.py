@@ -36,7 +36,7 @@ async def on_message(message):
     elif message.content.startswith('d!choose '):
         a = message.content
         b,c,d=a.split(" ")
-        await garith,send_message(message.channel, '<@%s> <@%s>' % c, %d)
+        await garith,send_message(message.channel, '<@%s> <@%s>' % (c), % (d))
 
 garith.run(os.getenv('TOKEN'))
         
