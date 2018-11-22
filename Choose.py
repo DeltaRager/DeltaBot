@@ -3,6 +3,8 @@ import os
 import discord
 import asyncio
 
+garith = discord.Client()
+
 async def choose(a):
     b,c,d=a.split(" ")
     l = [c,d]
