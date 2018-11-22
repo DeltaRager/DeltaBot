@@ -19,7 +19,7 @@ async def on_message(message):
         counter=0
         tmp = await garith.send_message(message.channel, 'Calculating messages..')
         async for log in garith.logs_from(message.channel,limit=100):
-            if log.author == message.autho:
+            if log.author == message.author:
                 counter +=1
 
 
