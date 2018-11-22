@@ -19,9 +19,7 @@ async def on_ready():
     print(garith.user.id)
     print('------')
 
-@garith.command()
-async def hi():
-    await tod.say('hello :v')
+
 
 
 @garith.event
