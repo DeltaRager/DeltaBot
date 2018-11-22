@@ -1,7 +1,7 @@
 import discord
 import asyncio
 import os
-from Choose import Choose
+
 
 garith = discord.Client()
 
