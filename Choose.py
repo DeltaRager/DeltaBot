@@ -1,3 +1,5 @@
+import random
+
 async def choose(a):
     b,c,d=a.split(" ")
     l = [c,d]
