@@ -32,22 +32,22 @@ async def test(message):
     await garith.edit_message(tmp, 'You have {} messages.'.format(counter))
     
 @garith.command()
-async def sleep():
+async def sleep(message):
     userID = message.author.id
     await asyncio.sleep(5)
     await garith.send_message(message.channel, '<@%s> Die please!' % (userID))
 
 @garith.command()
-async def night(*args):
+async def night(message):
     await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
 
 @garith.command()
-async def choose():
+async def choose(message):
     a = message.content
     await Choose.choose(a,garith,message)
 
 @garith.command()
-async def help()
+async def help(message):
     await Help.help(garith,message)
         
 
