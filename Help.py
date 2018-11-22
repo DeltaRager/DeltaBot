@@ -4,6 +4,6 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 
 
-async def choose(garith,message):
+async def help(garith,message):
     await garith.send_message(message.channel,"**Ze Commands** \n```Prefix: 'g!' \n\nHelp\n----\nInfo:Give you the juicy commands```")
     
