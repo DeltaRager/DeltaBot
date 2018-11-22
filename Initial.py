@@ -47,6 +47,9 @@ async def on_message(message):
 
     elif message.content.startswith('g!help'):
         await Help.help(garith,message)
+
+    elif message.content.startswith('g!join'):
+        await garith.join_voice_channel(channel)
         
 
 garith.run(os.getenv('TOKEN'))
