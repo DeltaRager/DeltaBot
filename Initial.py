@@ -54,7 +54,7 @@ async def on_message(message):
 
     elif message.content.startswith('g!leave'):
         server = message.server
-        voice_client = garith.voice_garith_in(server)
+        voice_client = garith.voice_client_in(server)
         await voice_client.disconnect()
         
 
