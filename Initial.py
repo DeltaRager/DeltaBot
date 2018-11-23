@@ -53,7 +53,7 @@ async def on_message(message):
         await garith.join_voice_channel(channel)
 
     elif message.content.startswith('g!leave'):
-        server = author.voice_channel
+        server = message.author.voice_channel
         voice_client = garith.voice_client_in(server)
         await voice_client.disconnect()
         
