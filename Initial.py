@@ -54,6 +54,9 @@ async def on_message(message):
 
     elif message.content.startswith('g!leave'):
         await Voice.join(garith,message)
+
+    elif message.content.startswith('g!play'):
+        await Voice.play(garith,message,url)
         
 
 garith.run(os.getenv('TOKEN'))
