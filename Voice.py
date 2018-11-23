@@ -1,8 +1,7 @@
 import discord
 from discord.ext import commands
 import youtube_dl
-if not discord.opus.is_loaded():
-    discord.opus.load_opus('opus')
+
 
 players = {}
 
