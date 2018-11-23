@@ -6,8 +6,6 @@ import Choose
 import Help
 from discord.ext import commands
 from discord.ext.commands import Bot
-import Voice
-import youtube_dl
 
 
 garith = discord.Client()
@@ -50,15 +48,6 @@ async def on_message(message):
 
     elif message.content.startswith('g!help'):
         await Help.help(garith,message)
-
-    elif message.content.startswith('g!join'):
-        await Voice.join(garith,message)
-
-    elif message.content.startswith('g!leave'):
-        await Voice.join(garith,message)
-
-    elif message.content.startswith('g!play'):
-        await Voice.play(garith,message)
         
 
 garith.run(os.getenv('TOKEN'))
