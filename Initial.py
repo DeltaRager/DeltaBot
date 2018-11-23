@@ -14,7 +14,7 @@ garith = discord.Client()
 
 @garith.event
 async def on_ready():
-    print('System check completed')
+    print('System check completed :c')
     print('Rebooting as')
     print(garith.user.name)
     print(garith.user.id)
