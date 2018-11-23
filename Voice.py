@@ -16,6 +16,7 @@ async def leave(garith,message):
 async def play(garith,message):
     a = message.content
     b,url = a.split(" ")
+    await garith.join_voice_channel(message.author.voice.voice_channel)
     server = message.server
     voice_garith = garith.voice_client_in(server)
     player = await voice_garith.create_ytdl_player(url)
