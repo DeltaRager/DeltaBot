@@ -6,6 +6,7 @@ import Choose
 import Help
 from discord.ext import commands
 from discord.ext.commands import Bot
+import Voice
 
 garith = discord.Client()
 
@@ -49,8 +50,7 @@ async def on_message(message):
         await Help.help(garith,message)
 
     elif message.content.startswith('g!join'):
-        channel = message.author.voice.voice_channel
-        await garith.join_voice_channel(channel)
+        await Voice.join(garith,message,ctx)
 
     elif message.content.startswith('g!leave'):
         server = message.author.voice_channel
