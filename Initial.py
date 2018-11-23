@@ -49,8 +49,9 @@ async def on_message(message):
     elif message.content.startswith('g!help'):
         await Help.help(garith,message)
 
-    elif message.content.startswith('g!join'):
-        await Voice.join(garith,message,ctx)
+@client.command(pass_context=True)
+async def join(ctx):
+    await Voice.join(garith,message,ctx)
 
     elif message.content.startswith('g!leave'):
         server = message.author.voice_channel
