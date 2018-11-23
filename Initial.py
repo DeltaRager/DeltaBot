@@ -11,7 +11,6 @@ import os
 
 
 garith = discord.Client()
-os.chdir(r'E:\ForBot\DeltaBot')
 
 
 
@@ -52,9 +51,8 @@ async def on_message(message):
     elif message.content.startswith('g!help'):
         await Help.help(garith,message)
 
-@garith.event
-async def on_message(message):
-    if message.content.startswith('g!cchar'):
+
+    elif message.content.startswith('g!cchar'):
         with open ('users.json', 'r') as f:
             users = json.load(f)
 
