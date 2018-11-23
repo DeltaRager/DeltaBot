@@ -6,10 +6,9 @@ import Choose
 import Help
 from discord.ext import commands
 from discord.ext.commands import Bot
-import Voice
+from Voice
 
 garith = discord.Client()
-client = commands.Bot(command_prefix= 'g!' )
 
 
 
@@ -50,9 +49,11 @@ async def on_message(message):
     elif message.content.startswith('g!help'):
         await Help.help(garith,message)
 
-@client.command(pass_context=True)
-async def join(ctx):
-    await Voice.join(garith,message,ctx)
+    elif message.content.startswith('g!join'):
+        await Voice.join(garith,message)
+
+    elif message.content.startswith('g!leave'):
+        await Voice.join(garith,message)
         
 
 garith.run(os.getenv('TOKEN'))
