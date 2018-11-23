@@ -56,26 +56,28 @@ async def on_message(message):
         with open ('users.json', 'r') as f:
             users = json.load(f)
 
-        await add_charname(users, message.author)
-        await add_charage(users, message.author)
-        await add_chargender(users, message.author)
-        await add_chardesc(users, message.author)
+        a = message.content
+        name,age,gend,des = a.split(" ")
+        await add_charname(users, name)
+        await add_charage(users, age)
+        await add_chargender(users, gend)
+        await add_chardesc(users, des)
         
         with open('users.json', 'w') as f:
             json.dump(users, f)
 
-async def add_charname(users, charname):
-    if not charname in users:
-        users[charname]['Name'] = {}
+async def add_charname(users, name):
+    if not name in users:
+        users[name]['Name'] = {}
 
-async def add_charage(users, charage):
-    users[charage]['Age']={}
+async def add_charage(users, age):
+    users[age]['Age']={}
 
-async def add_chargender(users, chargender):
-    users[chargender]['Gender']={}
+async def add_chargender(users, gend):
+    users[gend]['Gender']={}
 
-async def add_chardesc(users, chardesc):
-    users[chardesc]['Description'] = {}
+async def add_chardesc(users, des):
+    users[des]['Description'] = {}
           
 
 
