@@ -9,6 +9,7 @@ from discord.ext.commands import Bot
 import Voice
 
 garith = discord.Client()
+client = commands.Bot(command_prefix= 'g!' )
 
 
 
