@@ -8,6 +8,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import Voice
 import youtube_dl
+import nacl.secret
 
 garith = discord.Client()
 
