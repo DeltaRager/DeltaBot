@@ -9,9 +9,9 @@ async def addquery(garith,message,time):
     question = message.content
     a,b=question.split("/")
     date = time.strftime("%H:%M")
-    await client.say('Successfully submitted query!')
+    await garith.say('Successfully submitted query!')
     channel = discord.Object(id='516566401188888596')
-    await client.send_message(channel, '**The user:** %s **asked:** %s **at** %s' % (name,b,date))
+    await garith.send_message(channel, '**The user:** %s **asked:** %s **at** %s' % (name,b,date))
     
     
     
