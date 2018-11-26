@@ -8,6 +8,8 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import json
 import os
+import query
+import datetime
 
 
 garith = discord.Client()
@@ -50,6 +52,10 @@ async def on_message(message):
 
     elif message.content.startswith('g!help'):
         await Help.help(garith,message)
+
+    elif message.content.startswith('g!ask'):
+        time = datetime.datetime.today()
+        await query.addquery(garith,message,time)
 
 
     
