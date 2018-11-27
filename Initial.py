@@ -37,7 +37,7 @@ async def on_message(message):
                 counter +=1
 
 
-        await garith.edit_message(tmp, 'You have {} messages.'.format(counter))
+        await garith.edit_message(tmp, 'You have sent {} messages.'.format(counter))
     elif message.content.startswith('g!sleep'):
         userID = message.author.id
         await asyncio.sleep(5)
