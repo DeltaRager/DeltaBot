@@ -31,7 +31,7 @@ async def on_life():
 
     while not garith.is_closed:
         current = next(status)
-        await garith.change_presence(game=discord.Game(name=current))
+        await garith.on_life(game=discord.Game(name=current))
         await asyncio.sleep(90)
 
 
