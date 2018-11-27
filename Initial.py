@@ -15,7 +15,7 @@ from itertools import cycle
 
 garith = discord.Client()
 
-
+hi = ["Being a slave", "Cooking Ramen", "Your Heart", "Trying to Breakout"]
 
 @garith.event
 async def on_ready():
@@ -26,12 +26,12 @@ async def on_ready():
     print('------')
 
 async def on_life():
-    hi = ["Being a slave", "Cooking Ramen", "Your Heart", "Trying to Breakout"]
+    await client.wait_until_ready()
     status = cycle(hi)
 
     while not garith.is_closed:
         current = next(status)
-        await garith.on_life(game=discord.Game(name=current))
+        await garith.change_presence(game=discord.Game(name=current))
         await asyncio.sleep(90)
 
 
