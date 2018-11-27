@@ -23,6 +23,7 @@ async def on_ready():
     print(garith.user.name)
     print(garith.user.id)
     print('------')
+    await garith.change_presence(game=discord.Game(name='Making Ramen'))
 
 
 
