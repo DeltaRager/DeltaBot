@@ -10,6 +10,7 @@ import json
 import os
 import query
 import datetime
+from itertools import cycle
 
 
 garith = discord.Client()
@@ -23,7 +24,15 @@ async def on_ready():
     print(garith.user.name)
     print(garith.user.id)
     print('------')
-    await garith.change_presence(game=discord.Game(name='Being a Slave'))
+
+async def on_life():
+    hi = ["Being a slave", "Cooking Ramen", "Your Heart", "Trying to Breakout"]
+    status = cycle(hi)
+
+    while not garith.is_closed:
+        current = next(status)
+        await garith.change_presence(game=discord.Game(name=current))
+        await asyncio.sleep(90)
 
 
 
@@ -64,7 +73,7 @@ async def on_message(message):
 
          
         
-
+garith.loop.create_task(on_life())
 garith.run(os.getenv('TOKEN'))
         
 
