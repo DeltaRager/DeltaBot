@@ -26,7 +26,7 @@ async def on_ready():
     print('------')
 
 async def on_life():
-    await client.wait_until_ready()
+    await garith.wait_until_ready()
     status = cycle(hi)
 
     while not garith.is_closed:
