@@ -8,12 +8,15 @@ async def choose(a,garith,message):
     f = random.choice(a)
     if (a==1):
         e = random.choice(x)
+        await garith.send_message(message.channel,'I choose **%s** ' % e)
     elif (a==2):
         del x[1]
         e = random.choice(x)
+        await garith.send_message(message.channel,'I choose **%s** ' % e)
     elif (a==3):
         del x[0]
         e = random.choice(x)
+        await garith.send_message(message.channel,'I choose **%s** ' % e)
         
     
-    await garith.send_message(message.channel,'I choose **%s** ' % e)
+    
