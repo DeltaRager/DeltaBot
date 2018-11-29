@@ -5,7 +5,7 @@ async def choose(a,garith,message):
     x = a.split(" ")
     del x[0]
     a = [1,2,3]
-    f = random.choice(f)
+    f = random.choice(a)
     if (a==1):
         e = random.choice(x)
     elif (a==2):
