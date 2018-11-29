@@ -67,6 +67,9 @@ async def on_message(message):
         time = datetime.datetime.today()
         await query.addquery(garith,message,time)
 
+    elif message.content.startswith('g!8ball'):
+        await Choose.eightball(garith,message)
+
 
     
 
