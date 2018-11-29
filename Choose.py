@@ -17,6 +17,18 @@ async def choose(a,garith,message):
         del x[0]
         e = random.choice(x)
         await garith.send_message(message.channel,'I choose **%s** ' % e)
+
+
+async def eightball(garith,message):
+    possible = [
+        'Nope',
+        'Not likely',
+        'Too hard to tell',
+        'Quite possible',
+        'Definitely',
+        'Maybe'
+        ]
+    await garith.send_message(message.channel, random.choice(possible)) 
         
     
     
