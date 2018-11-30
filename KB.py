@@ -1,5 +1,5 @@
 import discord
-import discord.ext from commands
+from discord.ext import commands
 
 async def kick(garith,message):
     a = message.mentions[0].id
