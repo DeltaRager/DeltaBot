@@ -64,7 +64,7 @@ async def choose(ctx):
     await Choose.choose(ctx,a,garith,message)
 
 @garith.command(pass_context=True)
-async def help(ctx):
+async def commands(ctx):
     await Help.help(ctx,garith,message)
 
 @garith.command(pass_context=True)
