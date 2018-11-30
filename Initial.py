@@ -11,11 +11,9 @@ import os
 import query
 import datetime
 from itertools import cycle
-import KB
 
 
-garith = discord.Client()
-
+garith = commands.Bot(command_prefix = 'g!')
 hi = ["Being a slave", "Cooking Ramen", "Your Heart", "Trying to Breakout"]
 
 @garith.event
@@ -38,42 +36,45 @@ async def on_life():
 
 
 
-@garith.event
-async def on_message(message):
-    if message.content.startswith('g!test'):
-        counter=0
-        tmp = await garith.send_message(message.channel, 'Calculating messages..')
-        async for log in garith.logs_from(message.channel,limit=100):
-            if log.author == message.author:
-                counter +=1
+@garith.command(pass_context=True)
+async def test(ctx):
+    counter=0
+    tmp = await garith.send_message(message.channel, 'Calculating messages..')
+    async for log in garith.logs_from(message.channel,limit=100):
+        if log.author == ctx.message.author:
+            counter +=1
 
 
-        await garith.edit_message(tmp, 'You have sent {} messages.'.format(counter))
-    elif message.content.startswith('g!sleep'):
-        userID = message.author.id
-        await asyncio.sleep(5)
-        await garith.send_message(message.channel, '<@%s> Die please!' % (userID))
+    await garith.edit_message(tmp, 'You have sent {} messages.'.format(counter))
 
-    elif message.content.startswith('g!night '):
-        await garith.send_message(message.channel, 'Good night <@%s>' % (message.mentions[0].id))
 
-    elif message.content.startswith('g!choose '):
-        a = message.content
-        await Choose.choose(a,garith,message)
+@garith.command(pass_context=True)
+async def sleep(ctx):
+    userID = ctx.message.author.id
+    await asyncio.sleep(5)
+    await garith.say('<@%s> Die please!' % (userID))
 
-    elif message.content.startswith('g!help'):
-        await Help.help(garith,message)
+@garith.command(pass_context=True)
+async def night(ctx):
+    await garith.say('Good night <@%s>' % (ctx.message.mentions[0].id))
 
-    elif message.content.startswith('g!ask'):
-        time = datetime.datetime.today()
-        await query.addquery(garith,message,time)
+@garith.command(pass_context=True)
+async def choose(ctx):
+    a = ctx.message.content
+    await Choose.choose(ctx,a,garith,message)
 
-    elif message.content.startswith('g!8ball'):
-        await Choose.eightball(garith,message)
+@garith.command(pass_context=True)
+async def help(ctx):
+    await Help.help(ctx,garith,message)
 
-    elif message.content.startswith('g!kick'):
-        user = discord.Member
-        await KB.kick(garith,message,user)
+@garith.command(pass_context=True)
+async def ask(ctx):
+    time = datetime.datetime.today()
+    await query.addquery(ctx,garith,message,time)
+
+@garith.command(pass_context=True)
+async def 8ball(ctx):
+    await Choose.eightball(ctx,garith,message)
 
 
     
