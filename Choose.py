@@ -2,7 +2,7 @@ import random
 import discord
 from discord.ext import commands
 
-async def choose(ctx,a,garith,message):
+async def choose(ctx,a,garith):
     x = a.split(" ")
     del x[0]
     a = [1,2,3]
@@ -20,7 +20,7 @@ async def choose(ctx,a,garith,message):
         await garith.say('I choose **%s** ' % e)
 
 
-async def eightball(ctx,garith,message):
+async def eightball(ctx,garith):
     possible = [
         'Nope',
         'Not likely',
