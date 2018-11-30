@@ -39,8 +39,8 @@ async def on_life():
 @garith.command(pass_context=True)
 async def test(ctx):
     counter=0
-    tmp = await garith.send_message(message.channel, 'Calculating messages..')
-    async for log in garith.logs_from(message.channel,limit=100):
+    tmp = await garith.say('Calculating messages..')
+    async for log in garith.logs_from(ctx.message.channel,limit=100):
         if log.author == ctx.message.author:
             counter +=1
 
@@ -61,20 +61,20 @@ async def night(ctx):
 @garith.command(pass_context=True)
 async def choose(ctx):
     a = ctx.message.content
-    await Choose.choose(ctx,a,garith,message)
+    await Choose.choose(ctx,a,garith)
 
 @garith.command(pass_context=True)
 async def commands(ctx):
-    await Help.help(ctx,garith,message)
+    await Help.help(ctx,garith)
 
 @garith.command(pass_context=True)
 async def ask(ctx):
     time = datetime.datetime.today()
-    await query.addquery(ctx,garith,message,time)
+    await query.addquery(ctx,garith,time)
 
 @garith.command(pass_context=True)
 async def eightball(ctx):
-    await Choose.eightball(ctx,garith,message)
+    await Choose.eightball(ctx,garith)
 
 
     
