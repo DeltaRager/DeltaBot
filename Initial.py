@@ -73,7 +73,7 @@ async def ask(ctx):
     await query.addquery(ctx,garith,message,time)
 
 @garith.command(pass_context=True)
-async def 8ball(ctx):
+async def eightball(ctx):
     await Choose.eightball(ctx,garith,message)
 
 
