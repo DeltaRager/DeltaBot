@@ -72,7 +72,8 @@ async def on_message(message):
         await Choose.eightball(garith,message)
 
     elif message.content.startswith('g!kick'):
-        await KB.kick(garith,message,user: discord.Member)
+        user = discord.Member
+        await KB.kick(garith,message,user)
 
 
     
