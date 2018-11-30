@@ -78,7 +78,11 @@ async def eightball(ctx):
 
 @garith.command(pass_context = True)
 async def kick(ctx, userName: discord.User):
+    a = ctx.message.content
+    b = a.split('-')
+    del b[0]
     await garith.kick(userName)
+    await garith.say("%s **was kicked, reason:** %s" % (userName,b))
 
 
     
