@@ -82,8 +82,9 @@ async def kick(ctx, userName: discord.User):
     a = ctx.message.content
     b = a.split('-')
     del b[0]
+    c = b[0]
     await garith.kick(userName)
-    await garith.say("%s **was kicked, reason:** %s" % (userName,b))
+    await garith.say("%s **was kicked, reason:** %s" % (userName,c))
 
 
     
