@@ -78,7 +78,7 @@ async def eightball(ctx):
 
 @garith.command(pass_context = True)
 async def kick(ctx, userName: discord.User):
-    if ('506452778663804938' or '516228231695695882') in [role.id for role in ctx.message.author.roles]:
+    if '506452778663804938' or '516228231695695882' in [role.id for role in ctx.message.author.roles]:
         a = ctx.message.content
         b = a.split('-')
         del b[0]
