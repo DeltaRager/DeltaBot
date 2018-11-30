@@ -76,7 +76,7 @@ async def ask(ctx):
 async def eightball(ctx):
     await Choose.eightball(ctx,garith)
 
-@bot.command(pass_context = True)
+@garith.command(pass_context = True)
 async def kick(ctx, userName: discord.User):
     await garith.kick(userName)
 
