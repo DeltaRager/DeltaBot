@@ -77,13 +77,12 @@ async def eightball(ctx):
     await Choose.eightball(ctx,garith)
 
 @garith.command(pass_context = True)
-async def kick(ctx, userName: discord.User, member: discord.Member):
+async def kick(ctx, userName: discord.User):
     if '506452778663804938' in [role.id for role in ctx.message.author.roles]:
         a = ctx.message.content
         b = a.split('-')
         del b[0]
-        c = b[0]
-        await garith.send_message(member ,'**You were kicked from Denzytee, Reason: **%s' % (c)) 
+        c = b[0] 
         await garith.kick(userName)
         await garith.say("%s **was kicked, reason:** %s" % (userName,c))
     else:
