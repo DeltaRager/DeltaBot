@@ -11,6 +11,7 @@ import os
 import query
 import datetime
 from itertools import cycle
+import KB
 
 
 garith = discord.Client()
@@ -69,6 +70,9 @@ async def on_message(message):
 
     elif message.content.startswith('g!8ball'):
         await Choose.eightball(garith,message)
+
+    elif message.content.startswith('g!kick'):
+        await KB.kick(garith,message)
 
 
     
