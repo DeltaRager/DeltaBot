@@ -77,15 +77,16 @@ async def eightball(ctx):
     await Choose.eightball(ctx,garith)
 
 @garith.command(pass_context = True)
-@commands.has_role('Staff')
 async def kick(ctx, userName: discord.User):
-    a = ctx.message.content
-    b = a.split('-')
-    del b[0]
-    c = b[0]
-    await garith.kick(userName)
-    await garith.say("%s **was kicked, reason:** %s" % (userName,c))
-
+    if '506452778663804938' in [role.id for role in ctx.message.author.roles]:
+        a = ctx.message.content
+        b = a.split('-')
+        del b[0]
+        c = b[0]
+        await garith.kick(userName)
+        await garith.say("%s **was kicked, reason:** %s" % (userName,c))
+     else:
+         await garith.say('You dont have permission to do that!')
 
     
 
