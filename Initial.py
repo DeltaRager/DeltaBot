@@ -85,7 +85,7 @@ async def kick(ctx, userName: discord.User):
         c = b[0]
         await garith.kick(userName)
         await garith.say("%s **was kicked, reason:** %s" % (userName,c))
-     else:
+     else
          await garith.say('You dont have permission to do that!')
 
     
