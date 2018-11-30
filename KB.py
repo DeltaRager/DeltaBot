@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 async def kick(garith,message):
-    a = message.mentions[0]
+    a = discord.User
     b = message.content
     x = b.split('"')
     del x[0]
