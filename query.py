@@ -4,7 +4,7 @@ import asyncio
 from datetime import date, datetime, timedelta
 import sys
 
-async def addquery(ctx,garith,message,time):
+async def addquery(ctx,garith,time):
     name = ctx.message.author.name
     question = ctx.message.content
     origin = ctx.message.channel
