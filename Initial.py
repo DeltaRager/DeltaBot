@@ -77,6 +77,7 @@ async def eightball(ctx):
     await Choose.eightball(ctx,garith)
 
 @garith.command(pass_context = True)
+@commands.has_role('Staff')
 async def kick(ctx, userName: discord.User):
     a = ctx.message.content
     b = a.split('-')
