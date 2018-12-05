@@ -96,7 +96,7 @@ async def unload(extension,ctx):
             except Exception as error:
                 await garith.say('{} cannot be Unloaded. [{}]'.format(extension, error))
     else:
-        await garith.say("You dont have permission to do that")
+        print('error')
     
 
 if __name__ == '__main__':
