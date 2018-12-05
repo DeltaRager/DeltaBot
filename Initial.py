@@ -85,15 +85,18 @@ async def load(extension):
         except Exception as error:
             await garith.say ('{} cannot be Loaded. [{}]'.format(extension, error))
 
-@garith.command()
-async def unload(extension):
-    for extension in extensions:
-        try:
-            client.unload_extension(extension)
-            await garith.say('Unloaded {}'.format(extension))
-        except Exception as error:
-            await garith.say ('{} cannot be Unloaded. [{}]'.format(extension, error))
-
+if '506452778663804938' or '516228231695695882' in [role.id for role in ctx.message.author.roles]:
+    @garith.command()
+    async def unload(extension):
+        for extension in extensions:
+            try:
+                client.unload_extension(extension)
+                await garith.say('Unloaded {}'.format(extension))
+            except Exception as error:
+                await garith.say ('{} cannot be Unloaded. [{}]'.format(extension, error))
+else:
+    await garith.say("You dont have permission to do that")
+    
 
 if __name__ == '__main__':
     for extension in extensions:
