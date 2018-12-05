@@ -15,5 +15,5 @@ class admin:
         await self.garith.kick(userName)
         await self.garith.say("%s **was kicked, reason:** %s" % (userName,c))
 
-def setup(client):
+def setup(garith):
     garith.add_cog(admin(garith))
