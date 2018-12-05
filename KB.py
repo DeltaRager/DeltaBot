@@ -7,7 +7,7 @@ class admin:
         self.garith = garith
 
     @commands.command()
-    async def kick(self,message,user: discord.Member):
+    async def kick(ctx,message,user: discord.Member):
         a = ctx.message.content
         b = a.split('-')
         del b[0]
