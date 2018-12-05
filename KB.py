@@ -1,9 +1,19 @@
 import discord
 from discord.ext import commands
 
-async def kick(garith,message,user: discord.Member):
-    b = message.content
-    x = b.split('"')
-    del x[0]
-    await garith.kick(user)
-    await garith.send_message(message.channel,"**The user:** <@%s> **Was kicked by:** **Reason:** %s " % (message.mentions[0].id,x))
+
+class admin:
+    def __init__(self,garith):
+        self.garith = garith
+
+    @commands.command()
+    async def kick(self,message,user: discord.Member):
+        a = ctx.message.content
+        b = a.split('-')
+        del b[0]
+        c = b[0]
+        await self.garith.kick(userName)
+        await self.garith.say("%s **was kicked, reason:** %s" % (userName,c))
+
+def setup(client):
+    gairth.add_cog(admin(garith))
