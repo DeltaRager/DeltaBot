@@ -16,4 +16,4 @@ class admin:
         await self.garith.say("%s **was kicked, reason:** %s" % (userName,c))
 
 def setup(client):
-    gairth.add_cog(admin(garith))
+    garith.add_cog(admin(garith))
