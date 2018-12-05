@@ -86,8 +86,8 @@ async def load(extension):
             await garith.say('{} cannot be Loaded. [{}]'.format(extension, error))
 
 
-@garith.command(pass_context='True')
-async def unload(extension,ctx):
+@garith.command()
+async def unload(extension):
     for extension in extensions:
         try:
             garith.unload_extension(extension)
