@@ -80,7 +80,7 @@ async def eightball(ctx):
 async def load(extension):
     for extension in extensions:
         try:
-            client.load_extension(extension)
+            garith.load_extension(extension)
             await garith.say('Loaded {}'.format(extension))
         except Exception as error:
             await garith.say('{} cannot be Loaded. [{}]'.format(extension, error))
@@ -90,7 +90,7 @@ async def load(extension):
 async def unload(extension,ctx):
     for extension in extensions:
         try:
-            client.unload_extension(extension)
+            garith.unload_extension(extension)
             await garith.say('Unloaded {}'.format(extension))
         except Exception as error:
             await garith.say('{} cannot be Unloaded. [{}]'.format(extension, error))
@@ -100,7 +100,7 @@ async def unload(extension,ctx):
 if __name__ == '__main__':
     for extension in extensions:
         try:
-            client.load_extension(extension)
+            garith.load_extension(extension)
             
             
         except Exception as error:
