@@ -7,13 +7,13 @@ class admin:
         self.garith = garith
 
     @commands.command()
-    async def kick(ctx,message,user: discord.Member):
+    async def kick(ctx,message,garith,user: discord.Member):
         a = ctx.message.content
         b = a.split('-')
         del b[0]
         c = b[0]
-        await self.garith.kick(userName)
-        await self.garith.say("%s **was kicked, reason:** %s" % (userName,c))
+        await garith.kick(userName)
+        await garith.say("%s **was kicked, reason:** %s" % (userName,c))
 
 def setup(garith):
     garith.add_cog(admin(garith))
