@@ -15,6 +15,7 @@ from itertools import cycle
 
 garith = commands.Bot(command_prefix = 'g!')
 hi = ["Being a slave", "Cooking Ramen", "Your Heart", "Trying to Breakout"]
+extensions = ['KB']
 
 @garith.event
 async def on_ready():
@@ -76,23 +77,37 @@ async def ask(ctx):
 async def eightball(ctx):
     await Choose.eightball(ctx,garith)
 
-@garith.command(pass_context = True)
-async def kick(ctx, userName: discord.User):
-    if '506452778663804938' or '516228231695695882' in [role.id for role in ctx.message.author.roles]:
-        a = ctx.message.content
-        b = a.split('-')
-        del b[0]
-        c = b[0] 
-        await garith.kick(userName)
-        await garith.say("%s **was kicked, reason:** %s" % (userName,c))
-    else:
-        await garith.say('You dont have permission to do that!')
+@garith.command()
+async def load(extension):
+    for extension in extensions:
+        try:
+            client.load_extension(extension)
+            await garith.say('Loaded {}'.format(extension))
+        except Exception as error:
+            await garith.say ('{} cannot be Loaded. [{}]'.format(extension, error))
 
-    
+@garith.command()
+async def unload(extension):
+    for extension in extensions:
+        try:
+            client.unload_extension(extension)
+            await garith.say('Unloaded {}'.format(extension))
+        except Exception as error:
+            await garith.say ('{} cannot be Unloaded. [{}]'.format(extension, error))
 
 
-         
-        
+if __name__ == '__main__':
+    for extension in extensions:
+        try:
+            if '506452778663804938' or '516228231695695882' in [role.id for role in ctx.message.author.roles]:
+                client.load_extension(extension)
+            else:
+                await garith.say('You dont have permission to do that!')
+            
+        except Exception as error:
+            await garith.say ('{} cannot be loaded. [{}]'.format(extension, error))
+
+
 garith.loop.create_task(on_life())
 garith.run(os.getenv('TOKEN'))
         
