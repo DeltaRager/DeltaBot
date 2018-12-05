@@ -100,13 +100,11 @@ async def unload(extension,ctx):
 if __name__ == '__main__':
     for extension in extensions:
         try:
-            if '506452778663804938' or '516228231695695882' in [role.id for role in ctx.message.author.roles]:
-                client.load_extension(extension)
-            else:
-                await garith.say('You dont have permission to do that!')
+            client.load_extension(extension)
+            
             
         except Exception as error:
-            await garith.say ('{} cannot be loaded. [{}]'.format(extension, error))
+            print('{} cannot be loaded. [{}]'.format(extension, error))
 
 
 garith.loop.create_task(on_life())
