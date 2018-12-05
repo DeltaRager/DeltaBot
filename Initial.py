@@ -78,22 +78,20 @@ async def eightball(ctx):
 
 @garith.command()
 async def load(extension):
-    for extension in extensions:
-        try:
-            garith.load_extension(extension)
-            await garith.say('Loaded {}'.format(extension))
-        except Exception as error:
-            await garith.say('{} cannot be Loaded. [{}]'.format(extension, error))
+    try:
+        garith.load_extension(extension)
+        await garith.say('Loaded {}'.format(extension))
+    except Exception as error:
+        await garith.say('{} cannot be Loaded. [{}]'.format(extension, error))
 
 
 @garith.command()
 async def unload(extension):
-    for extension in extensions:
-        try:
-            garith.unload_extension(extension)
-            await garith.say('Unloaded {}'.format(extension))
-        except Exception as error:
-            await garith.say('{} cannot be Unloaded. [{}]'.format(extension, error))
+    try:
+        garith.unload_extension(extension)
+        await garith.say('Unloaded {}'.format(extension))
+    except Exception as error:
+        await garith.say('{} cannot be Unloaded. [{}]'.format(extension, error))
    
     
 
