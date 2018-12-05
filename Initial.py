@@ -6,7 +6,6 @@ import Choose
 import Help
 from discord.ext import commands
 from discord.ext.commands import Bot
-import json
 import os
 import query
 import datetime
