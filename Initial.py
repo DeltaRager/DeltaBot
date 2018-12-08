@@ -10,6 +10,7 @@ import os
 import query
 import datetime
 from itertools import cycle
+import timetable
 
 
 garith = commands.Bot(command_prefix = 'g!')
@@ -103,6 +104,10 @@ if __name__ == '__main__':
             
         except Exception as error:
             print('{} cannot be loaded. [{}]'.format(extension, error))
+
+@garith.command(pass_context=True)
+async def tt(ctx):
+    await timetable.tt(ctx,garith)
 
 
 garith.loop.create_task(on_life())
