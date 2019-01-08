@@ -86,7 +86,7 @@ async def load(extension):
     except Exception as error:
         await garith.say('{} cannot be Loaded. [{}]'.format(extension, error))
 
-@client.command(pass_context=True)
+@garith.command(pass_context=True)
 async def fortniteleader(ctx):
     await fortnite.fortniteleader(ctx,garith)
 
