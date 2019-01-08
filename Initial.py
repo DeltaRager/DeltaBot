@@ -10,7 +10,7 @@ import os
 import query
 import datetime
 from itertools import cycle
-import fortnite
+
 
 
 
@@ -85,10 +85,6 @@ async def load(extension):
         await garith.say('Loaded {}'.format(extension))
     except Exception as error:
         await garith.say('{} cannot be Loaded. [{}]'.format(extension, error))
-
-@garith.command(pass_context=True)
-async def fortniteleader(ctx):
-    await fortnite.fortniteleader(ctx,garith)
 
 
 @garith.command()
