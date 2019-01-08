@@ -4,4 +4,6 @@ youtube_dl
 PyNaCl
 cffi
 psycopg2
+selenium
+Pillow
 
