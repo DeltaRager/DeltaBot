@@ -3,4 +3,5 @@ discord.py[voice] ~= 0.16.0
 youtube_dl
 PyNaCl
 cffi
+psycopg2
 
