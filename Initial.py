@@ -67,10 +67,7 @@ async def choose(ctx):
 
 @garith.command(pass_context=True)
 async def say(ctx):
-    a = ctx.message.content
-    x = a.split(" ")
-    del x[0]
-    await garith.say(x[0],x[1],x[2])
+    await garith.say('d!spam lololololol 18')
 
 
 
