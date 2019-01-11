@@ -67,7 +67,7 @@ async def choose(ctx):
 
 @garith.command(pass_context=True)
 async def say(ctx):
-    await garith.say('d!spam lololololol 18')
+    await garith.say('d!spam z!say 18')
 
 
 
