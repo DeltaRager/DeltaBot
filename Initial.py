@@ -66,6 +66,14 @@ async def choose(ctx):
     await Choose.choose(ctx,a,garith)
 
 @garith.command(pass_context=True)
+async def say(ctx):
+    a = ctx.message.content
+    x = a.split(" ")
+    await garith.say(x)
+
+
+
+@garith.command(pass_context=True)
 async def commands(ctx):
     await Help.help(ctx,garith)
 
