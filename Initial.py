@@ -69,7 +69,8 @@ async def choose(ctx):
 async def say(ctx):
     a = ctx.message.content
     x = a.split(" ")
-    await garith.say(x)
+    del x[0]
+    await garith.say(x[0])
 
 
 
