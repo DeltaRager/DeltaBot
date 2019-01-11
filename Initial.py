@@ -15,7 +15,7 @@ from itertools import cycle
 
 
 garith = commands.Bot(command_prefix = 'z!')
-hi = ["Being a slave", "Cooking Ramen", "Your Heart", "Trying to Breakout"]
+hi = ["Being a slave", "Cooking Udon Curry", "Your Heart", "Trying to Breakout"]
 extensions = ['KB']
 
 @garith.event
