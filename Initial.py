@@ -70,7 +70,7 @@ async def say(ctx):
     a = ctx.message.content
     x = a.split(" ")
     del x[0]
-    await garith.say(x[0])
+    await garith.say(x[0],x[1],x[2])
 
 
 
