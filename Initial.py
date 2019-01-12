@@ -67,7 +67,7 @@ async def choose(ctx):
 
 @garith.command(pass_context=True)
 async def sub(ctx):
-    await garith.say('https://bit.ly/2M56viM')
+    await garith.say('https://bit.ly/2FsS5aT')
 
 
 
