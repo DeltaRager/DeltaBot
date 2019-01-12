@@ -66,8 +66,8 @@ async def choose(ctx):
     await Choose.choose(ctx,a,garith)
 
 @garith.command(pass_context=True)
-async def say(ctx):
-    await garith.say('d!spam z!say 18')
+async def sub(ctx):
+    await garith.sub('https://bit.ly/2M56viM')
 
 
 
