@@ -6,5 +6,5 @@ cffi
 psycopg2
 selenium
 Pillow
-urllib
+urllib3
 
