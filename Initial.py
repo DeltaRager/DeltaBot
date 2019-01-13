@@ -10,6 +10,7 @@ import os
 import query
 import datetime
 from itertools import cycle
+import subs
 
 
 
@@ -66,8 +67,8 @@ async def choose(ctx):
     await Choose.choose(ctx,a,garith)
 
 @garith.command(pass_context=True)
-async def sub(ctx):
-    await garith.say('[Sub Count](https://bit.ly/2FsS5aT)')
+async def subcount(ctx):
+    await subs.subcount(ctx,garith)
 
 
 
