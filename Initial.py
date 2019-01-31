@@ -87,17 +87,13 @@ async def eightball(ctx):
 
 @garith.command(pass_context=True)
 async def na(ctx):
-    a = ctx.message.content
-    x = a.split(" ")
-    c = int(x[1])
     channel = ctx.message.author.voice.voice_channel
     await garith.join_voice_channel(channel)
-    for i in c:
-        l = random.randint(10,60)
-        time.sleep(l)
-        h = ['!play russian national anthem','!play brazil national anthem','!play indian national anthem','!play swedish national anthem']
-        j = random.choice(h)
-        await garith.say(j)
+    l = random.randint(2,10)
+    time.sleep(l)
+    h = ['!play russian national anthem','!play brazil national anthem','!play indian national anthem','!play swedish national anthem']
+    j = random.choice(h)
+    await garith.say(j)
     
 
 @garith.command()
