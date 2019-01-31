@@ -91,12 +91,7 @@ async def na(ctx):
     channel = author.voice_channel
     await garith.join_voice_channel(channel)
     discord.opus.load_opus()
-    l = random.randint(2,10)
-    time.sleep(l)
-    h = ['!play russian national anthem','!play brazil national anthem','!play indian national anthem','!play swedish national anthem']
-    j = random.choice(h)
-    await garith.say(j)
-    
+    await garith.say('i joined')
 
 @garith.command()
 async def load(extension):
