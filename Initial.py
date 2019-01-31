@@ -85,6 +85,22 @@ async def ask(ctx):
 async def eightball(ctx):
     await Choose.eightball(ctx,garith)
 
+@garith.command(pass_context=True)
+async def na(ctx):
+    a = ctx.message.content
+    x = a.split(" ")
+    del x[0]
+    c = int(x,10)
+    channel = ctx.message.author.voice.voice_channel
+    await garith.join_voice_channel(channel)
+    for i in c:
+        l = random.randint(10,60)
+        time.sleep(l)
+        h = ['!play russian national anthem','!play brazil national anthem','!play indian national anthem','!play swedish national anthem']
+        j = random.choice(h)
+        await garith.say(j)
+    
+
 @garith.command()
 async def load(extension):
     try:
