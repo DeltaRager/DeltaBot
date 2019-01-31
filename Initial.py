@@ -89,8 +89,7 @@ async def eightball(ctx):
 async def na(ctx):
     a = ctx.message.content
     x = a.split(" ")
-    del x[0]
-    c = int(x)
+    c = int(x[1])
     channel = ctx.message.author.voice.voice_channel
     await garith.join_voice_channel(channel)
     for i in c:
