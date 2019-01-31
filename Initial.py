@@ -87,7 +87,8 @@ async def eightball(ctx):
 
 @garith.command(pass_context=True)
 async def na(ctx):
-    channel = ctx.message.author.voice.voice_channel
+    author = ctx.message.author
+    channel = author.voice_channel
     await garith.join_voice_channel(channel)
     l = random.randint(2,10)
     time.sleep(l)
