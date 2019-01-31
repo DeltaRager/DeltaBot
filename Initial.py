@@ -90,6 +90,7 @@ async def na(ctx):
     author = ctx.message.author
     channel = author.voice_channel
     await garith.join_voice_channel(channel)
+    discord.opus.load_opus()
     l = random.randint(2,10)
     time.sleep(l)
     h = ['!play russian national anthem','!play brazil national anthem','!play indian national anthem','!play swedish national anthem']
