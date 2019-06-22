@@ -58,6 +58,10 @@ async def sleep(ctx):
     await garith.say('<@%s> Die please!' % (userID))
 
 @garith.command(pass_context=True)
+async def text(ctx):
+    await garith.say('Hopefully created')
+
+@garith.command(pass_context=True)
 async def night(ctx):
     await garith.say('Good night <@%s>' % (ctx.message.mentions[0].id))
 
@@ -87,10 +91,8 @@ async def eightball(ctx):
 
 @garith.command(pass_context=True)
 async def na(ctx):
-    author = ctx.message.author
-    channel = author.voice_channel
-    await garith.join_voice_channel(channel)
-    discord.opus.load_opus()
+    channel = ctx.message.author.voice.voice_channel
+    await client.join_voice_channel(channel)
     await garith.say('i joined')
 
 @garith.command()
