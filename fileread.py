@@ -1,2 +1,7 @@
-f= open("itworks.txt","w+")
-f.close()
+import discord
+from discord.ext import commands
+
+
+async def text(ctx):
+        f= open("itworks.txt","w+")
+        f.close()
