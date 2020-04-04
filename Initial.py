@@ -12,7 +12,7 @@ import datetime
 from itertools import cycle
 import subs
 
-
+TOKEN = 'jMVtsGnxTs8oJYZ4Wdsd15vy8ajSgtMQ'
 
 
 garith = commands.Bot(command_prefix = 'z!')
