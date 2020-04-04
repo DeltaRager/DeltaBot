@@ -12,7 +12,7 @@ import datetime
 from itertools import cycle
 import subs
 
-TOKEN = 'jMVtsGnxTs8oJYZ4Wdsd15vy8ajSgtMQ'
+TOTO = 'jMVtsGnxTs8oJYZ4Wdsd15vy8ajSgtMQ'
 
 
 garith = commands.Bot(command_prefix = 'z!')
@@ -135,7 +135,7 @@ if __name__ == '__main__':
 
 
 garith.loop.create_task(on_life())
-garith.run(os.getenv('TOKEN'))
+garith.run(os.getenv('TOTO'))
         
 
 
