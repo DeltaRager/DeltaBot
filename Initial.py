@@ -50,6 +50,14 @@ async def test(ctx):
 
     await garith.edit_message(tmp, 'You have sent {} messages.'.format(counter))
 
+@garith.command(pass_context=True)
+async def F(ctx):
+    r = ctx.message
+    await garith.add_reaction(r,':regional_indicator_f:')
+    
+
+
+
 
 @garith.command(pass_context=True)
 async def sleep(ctx):
